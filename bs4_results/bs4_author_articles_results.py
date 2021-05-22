@@ -7,7 +7,7 @@ headers = {
 }
 
 proxies = {
-  'http': env.'HTTP_PROXY'
+  'http': env.HTTP_PROXY
 }
 
 def bs4_srape_author_articles_result():
