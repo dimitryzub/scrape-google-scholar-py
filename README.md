@@ -1,1 +1,1 @@
-# scrape-google-scholar
+# Scrape Google Scholar with Python
