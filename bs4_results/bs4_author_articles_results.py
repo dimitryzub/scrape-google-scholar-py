@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests, lxml
+import requests, lxml, os
 
 headers = {
     'User-agent':
@@ -7,7 +7,7 @@ headers = {
 }
 
 proxies = {
-  'http': env.HTTP_PROXY
+  'http': os.getenv('HTTP_PROXY')
 }
 
 def bs4_srape_author_articles_result():
