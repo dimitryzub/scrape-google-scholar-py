@@ -1,0 +1,39 @@
+from bs4_results.bs4_organic_results import bs4_srape_organic_results
+from bs4_results.bs4_profile_results import bs4_srape_profile_results
+
+from bs4_results.bs4_author_articles_results import bs4_srape_author_articles_result
+from bs4_results.bs4_author_citedby_results import bs4_srape_author_citedby_result
+from bs4_results.bs4_author_co_authors_results import bs4_srape_author_co_authors_result
+from bs4_results.bs4_author_results import bs4_srape_author_result
+
+
+# bs4_srape_organic_results()
+# bs4_srape_profile_results()
+
+# bs4_srape_author_articles_result()
+# bs4_srape_author_citedby_result()
+# bs4_srape_author_co_authors_result()
+
+# Scrapes author_articles, author_citedby, author_co_author results at the same time:
+bs4_srape_author_result()
+
+
+from serpapi_results.serpapi_organic_results import serpapi_srape_organic_results
+from serpapi_results.serpapi_profile_results import serpapi_srape_profile_results
+from serpapi_results.serpapi_cite_results import serpapi_srape_cite_results
+from serpapi_results.serpapi_author_articles_results import serpapi_srape_author_articles_results
+from serpapi_results.serpapi_author_citedby_results import serpapi_srape_author_citedby_results
+from serpapi_results.serpapi_author_co_author_results import serpapi_srape_author_co_author_results
+from serpapi_results.serpapi_author_result import serpapi_srape_author_result
+
+
+# serpapi_srape_organic_results()
+# serpapi_srape_profile_results()
+# serpapi_srape_cite_results()
+
+# serpapi_srape_author_articles_results()
+# serpapi_srape_author_citedby_results()
+# serpapi_srape_author_co_author_results()
+
+# Scrapes author_articles, author_citedby, author_co_author results at the same time:
+# serpapi_srape_author_result()
