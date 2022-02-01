@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests, lxml, os
+import requests, lxml
 
 headers = {
     'User-agent':
