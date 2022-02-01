@@ -1,17 +1,14 @@
 from bs4 import BeautifulSoup
-import requests, lxml, os
+import requests, lxml
 
 headers = {
     'User-agent':
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
 }
 
-proxies = {
-  'http': os.getenv('HTTP_PROXY')
-}
 
 def bs4_srape_profile_results():
-  html = requests.get('https://scholar.google.com/citations?view_op=view_org&hl=en&org=9834965952280547731', headers=headers, proxies=proxies).text
+  html = requests.get('https://scholar.google.com/citations?view_op=view_org&hl=en&org=9834965952280547731', headers=headers).text
 
   soup = BeautifulSoup(html, 'lxml')
 
