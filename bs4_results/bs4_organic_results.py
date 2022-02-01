@@ -1,17 +1,13 @@
 from bs4 import BeautifulSoup
-import requests, lxml, os, json
+import requests, lxml, json
 
 headers = {
     'User-agent':
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
 }
 
-proxies = {
-  'http': os.getenv('HTTP_PROXY')
-}
-
 def bs4_srape_organic_results():
-  html = requests.get('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=samsung&oq=', headers=headers, proxies=proxies).text
+  html = requests.get('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=samsung', headers=headers).text
 
   soup = BeautifulSoup(html, 'lxml')
 
@@ -46,4 +42,4 @@ def bs4_srape_organic_results():
       'all_article_versions': f'https://scholar.google.com{all_article_versions}',
     })
 
-  print(json.dumps(data, indent = 2, ensure_ascii = False))
+  print(json.dumps(data, indent=2, ensure_ascii=False))
