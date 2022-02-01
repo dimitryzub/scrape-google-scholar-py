@@ -6,12 +6,8 @@ headers = {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
 }
 
-proxies = {
-  'http': os.getenv('HTTP_PROXY')
-}
-
 def bs4_srape_author_citedby_result():
-  html = requests.get('https://scholar.google.com/citations?hl=en&user=m8dFEawAAAAJ', headers=headers, proxies=proxies).text
+  html = requests.get('https://scholar.google.com/citations?hl=en&user=m8dFEawAAAAJ', headers=headers).text
   soup = BeautifulSoup(html, 'lxml')
 
   for cited_by_public_access in soup.select('.gsc_rsb'):
