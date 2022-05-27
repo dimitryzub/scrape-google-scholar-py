@@ -6,7 +6,7 @@ headers = {
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36'
 }
 
-def bs4_srape_author_result():
+def bs4_scrape_author_result():
   html = requests.get('https://scholar.google.com/citations?hl=en&user=m8dFEawAAAAJ', headers=headers).text
   soup = BeautifulSoup(html, 'lxml')
 
