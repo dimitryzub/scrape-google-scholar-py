@@ -3,10 +3,10 @@ import requests, lxml, json
 
 headers = {
     'User-agent':
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36'
 }
 
-def bs4_srape_organic_results():
+def bs4_scrape_organic_results():
   html = requests.get('https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=samsung', headers=headers).text
 
   soup = BeautifulSoup(html, 'lxml')
@@ -20,6 +20,7 @@ def bs4_srape_organic_results():
   data = []
 
   # Container where all needed data located
+  # extracts 10 results from the first page
   for result in soup.select('.gs_ri'):
     title = result.select_one('.gs_rt').text
     title_link = result.select_one('.gs_rt a')['href']
@@ -43,3 +44,6 @@ def bs4_srape_organic_results():
     })
 
   print(json.dumps(data, indent=2, ensure_ascii=False))
+
+
+bs4_scrape_organic_results()
