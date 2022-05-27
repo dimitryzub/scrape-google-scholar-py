@@ -1,5 +1,7 @@
 # Scrape Google Scholar with Python
 
+> Note: some of the code is outdated and might not work. You can visit my [blog posts archive repo](https://github.com/dimitryzub/serpapi-blog-posts-archive/tree/main/Google/google_scholar) with newly added code snippets.
+
 ## Includes: 
 1. Organic results 
 2. Profiles results 
