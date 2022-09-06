@@ -1,4 +1,4 @@
-from serpapi import GooleScholarSearch
+from serpapi import GoogleScholarSearch
 from urllib.parse import urlsplit, parse_qsl
 import os, json
 
