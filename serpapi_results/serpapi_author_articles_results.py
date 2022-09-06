@@ -1,24 +1,46 @@
 from serpapi import GoogleSearch
-import os
+import os, json
 
-def serpapi_srape_author_articles_results():
-  params = {
-    "api_key": os.getenv("API_KEY"),
-    "engine": "google_scholar_author",
-    "author_id": "9PepYk8AAAAJ",
-    "hl": "en",
-  }
+def serpapi_scrape_articles():
+    params = {
+        'api_key': os.getenv('API_KEY'),        # your serpapi api key
+        'engine': 'google_scholar_author',      # serpapi parsing engine
+        'hl': 'en',                             # language of the search
+        'author_id': '_xwYD2sAAAAJ',            # author ID
+        'start': '0',                           # page number: 0 - first, 1 second and so on.
+        'num': '100'                            # number of articles per page
+    }
 
-  search = GoogleSearch(params)
-  results = search.get_dict()
+    search = GoogleScholarSearch(params)
 
-  for article in results['articles']:
-    article_title = article['title']
-    article_link = article['link']
-    article_authors = article['authors']
-    article_publication = article['publication']
-    cited_by = article['cited_by']['value']
-    cited_by_link = article['cited_by']['link']
-    article_year = article['year']
+    all_articles = []
 
-    print(f"Title: {article_title}\nLink: {article_link}\nAuthors: {article_authors}\nPublication: {article_publication}\nCited by: {cited_by}\nCited by link: {cited_by_link}\nPublication year: {article_year}\n")
+    while True:
+        results = search.get_dict()
+
+        for article in results['articles']:
+            title = article.get('title')
+            link = article.get('link')
+            authors = article.get('authors')
+            publication = article.get('publication')
+            citation_id = article.get('citation_id')
+            year = article.get('year')
+            cited_by_count = article.get('cited_by').get('value')
+
+            all_articles.append({
+                'title': title,
+                'link': link,
+                'authors': authors,
+                'publication': publication,
+                'citation_id': citation_id,
+                'cited_by_count': cited_by_count,
+                'year': year
+            })
+
+        if 'next' in results.get('serpapi_pagination', []):
+            # split URL in parts as a dict() and update 'search' variable to a new page
+            search.params_dict.update(dict(parse_qsl(urlsplit(results['serpapi_pagination']['next']).query)))
+        else:
+            break
+
+    print(json.dumps(all_articles, indent=2, ensure_ascii=False))
