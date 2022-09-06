@@ -36,8 +36,9 @@ def serpapi_scrape_articles():
                 'cited_by_count': cited_by_count,
                 'year': year
             })
-
-        if 'next' in results.get('serpapi_pagination', []):
+        
+        # check if the next page is present in 'serpapi_pagination' dict key
+        if 'next' in results.get('serpapi_pagination', {}):
             # split URL in parts as a dict() and update 'search' variable to a new page
             search.params_dict.update(dict(parse_qsl(urlsplit(results['serpapi_pagination']['next']).query)))
         else:
