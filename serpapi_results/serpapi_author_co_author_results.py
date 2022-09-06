@@ -1,4 +1,4 @@
-from serpapi import GoogleSearch
+from serpapi import GoogleScholarSearch
 import os
 
 def serpapi_srape_author_co_author_results():
@@ -9,7 +9,7 @@ def serpapi_srape_author_co_author_results():
     "hl": "en",
   }
 
-  search = GoogleSearch(params)
+  search = GoogleScholarSearch(params)
   results = search.get_dict()
 
   for authors in results['co_authors']:
