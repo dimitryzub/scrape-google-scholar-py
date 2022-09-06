@@ -1,4 +1,4 @@
-from serpapi import GoogleSearch
+from serpapi import GoogleScholarSearch
 from urllib.parse import urlsplit, parse_qsl
 import os, json
 
@@ -12,7 +12,7 @@ def serpapi_scrape_google_scholar_organic_results():
         'start': 0                       # first page
     }
 
-    search = GoogleSearch(params)        # where data extracts on the backend
+    search = GoogleScholarSearch(params)        # where data extracts on the backend
 
     organic_results_data = []
 
