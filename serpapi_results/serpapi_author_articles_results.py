@@ -1,4 +1,5 @@
 from serpapi import GoogleSearch
+from urllib.parse import urlsplit, parse_qsl
 import os, json
 
 def serpapi_scrape_articles():
