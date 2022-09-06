@@ -9,7 +9,7 @@ def serpapi_scrape_all_authors():
         'engine': 'google_scholar_profiles',  # profile results search engine
         'mauthors': 'blizzard',               # search query
     }
-    search = GooleScholarSearch(params)
+    search = GoogleScholarSearch(params)
 
     profile_results_data = []
 
