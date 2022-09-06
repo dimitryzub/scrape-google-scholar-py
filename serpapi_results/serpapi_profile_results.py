@@ -1,4 +1,4 @@
-from serpapi import GoogleSearch
+from serpapi import GooleScholarSearch
 from urllib.parse import urlsplit, parse_qsl
 import os, json
 
@@ -9,7 +9,7 @@ def serpapi_scrape_all_authors():
         'engine': 'google_scholar_profiles',  # profile results search engine
         'mauthors': 'blizzard',               # search query
     }
-    search = GoogleSearch(params)
+    search = GooleScholarSearch(params)
 
     profile_results_data = []
 
