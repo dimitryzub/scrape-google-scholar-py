@@ -3,11 +3,11 @@
 </p>
 
 ## Scrapes: 
-1. Organic results.
-2. Profiles results.
+1. Organic results, pagination.
+2. Profiles results, pagination.
 3. Cite results.
-4. Profile results.
-5. Authors (articles, cited by, public access, co-authors) results. 
+4. Profile results, pagination.
+5. Authors (articles (pagination), cited by, public access, co-authors) results. 
 
 ## Blog post series:
 [Google Scholar blog post web scraping series in Python at SerpApi](https://serpapi.com/blog/tag/google-scholar/).
