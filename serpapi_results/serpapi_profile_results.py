@@ -13,9 +13,7 @@ def serpapi_scrape_all_authors():
 
     profile_results_data = []
 
-    profiles_is_present = True
-    while profiles_is_present:
-
+    while True:
         profile_results = search.get_dict()
 
         for profile in profile_results['profiles']:
@@ -42,10 +40,14 @@ def serpapi_scrape_all_authors():
                 'interests': interests
             })
 
-            if 'next' in profile_results['pagination']:
+            if 'next' in profile_results.get('pagination'):
                 # split URL in parts as a dict() and update search 'params' variable to a new page
                 search.params_dict.update(dict(parse_qsl(urlsplit(profile_results['pagination']['next']).query)))
             else:
-                profiles_is_present = False
+                break
 
     return profile_results_data
+
+
+if __name__ == '__main__': 
+    serpapi_scrape_all_authors()

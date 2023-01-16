@@ -57,23 +57,23 @@ def serpapi_scrape_google_scholar_organic_results():
             all_versions_id = result.get('inline_links', {}).get('versions', {}).get('cluster_id', {})
   
             organic_results_data.append({
-              'page_number': results['serpapi_pagination']['current'],
-              'position': position + 1,
-              'result_type': result_type,
-              'title': title,
-              'link': link,
-              'result_id': result_id,
-              'publication_info_summary': publication_info_summary,
-              'snippet': snippet,
-              'cited_by_count': cited_by_count,
-              'cited_by_link': cited_by_link,
-              'cited_by_id': cited_by_id,
-              'total_versions': total_versions,
-              'all_versions_link': all_versions_link,
-              'all_versions_id': all_versions_id,
-              'file_format': file_format,
-              'file_title': file_title,
-              'file_link': file_link,
+                'page_number': results['serpapi_pagination']['current'],
+                'position': position + 1,
+                'result_type': result_type,
+                'title': title,
+                'link': link,
+                'result_id': result_id,
+                'publication_info_summary': publication_info_summary,
+                'snippet': snippet,
+                'cited_by_count': cited_by_count,
+                'cited_by_link': cited_by_link,
+                'cited_by_id': cited_by_id,
+                'total_versions': total_versions,
+                'all_versions_link': all_versions_link,
+                'all_versions_id': all_versions_id,
+                'file_format': file_format,
+                'file_title': file_title,
+                'file_link': file_link,
             })
 
         if 'next' in results.get('serpapi_pagination', {}):
@@ -82,3 +82,6 @@ def serpapi_scrape_google_scholar_organic_results():
             break
 
     return organic_results_data
+
+if __name__ == '__main__': 
+    serpapi_scrape_google_scholar_organic_results()

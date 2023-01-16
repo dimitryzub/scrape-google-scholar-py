@@ -12,7 +12,7 @@ def parsel_scrape_all_author_articles():
     }
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
 
     all_articles = []
@@ -48,4 +48,6 @@ def parsel_scrape_all_author_articles():
             params['cstart'] += 100  # paginate to the next page
 
     # [:-1] doesn't pick last element which is not we want and don't contain any data.
+    
+if __name__ == '__main__':
     print(json.dumps(all_articles[:-1], indent=2, ensure_ascii=False))

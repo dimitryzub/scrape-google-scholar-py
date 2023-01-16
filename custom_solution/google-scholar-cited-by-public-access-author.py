@@ -9,7 +9,7 @@ def parsel_scrape_author_cited_by_graph():
     }
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
 
     data = {
@@ -43,5 +43,5 @@ def parsel_scrape_author_cited_by_graph():
             'value': int(graph_yaer_value.get())
         })
 
-
+if __name__ == '__main__':
     print(json.dumps(data, indent=2, ensure_ascii=False))

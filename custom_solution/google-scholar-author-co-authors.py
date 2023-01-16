@@ -9,7 +9,7 @@ def parsel_scrape_author_co_authors():
     }
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
 
     co_authors = []
@@ -26,5 +26,6 @@ def parsel_scrape_author_co_authors():
             # https://regex101.com/r/awJNhL/1
             'thumbnail': f"https://scholar.googleusercontent.com/citations?view_op=view_photo&user={re.search(r'user=(.*)&', result.css('.gsc_rsb_a_desc a::attr(href)').get()).group(1)}"
         })
-
+        
+if __name__ == '__main__':
     print(json.dumps(co_authors, indent=2, ensure_ascii=False))

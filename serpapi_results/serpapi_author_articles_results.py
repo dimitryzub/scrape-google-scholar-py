@@ -45,4 +45,5 @@ def serpapi_scrape_articles():
         else:
             break
 
-    print(json.dumps(all_articles, indent=2, ensure_ascii=False))
+if __name__ == '__main__':
+    print(json.dumps(serpapi_scrape_articles(), indent=2, ensure_ascii=False))

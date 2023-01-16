@@ -11,7 +11,7 @@ def scrape_all_authors():
     }
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3538.102 Safari/537.36 Edge/18.19582',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
 
     data = []
@@ -46,5 +46,6 @@ def scrape_all_authors():
             params['astart'] += 10
         else:
             break
-        
+
+if __name__ == '__main__':
     print(json.dumps(data, indent=2, ensure_ascii=False))
