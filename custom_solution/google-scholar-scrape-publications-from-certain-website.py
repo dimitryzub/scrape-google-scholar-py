@@ -1,5 +1,7 @@
 # step-by-step blog post: https://serpapi.com/blog/scrape-google-scholar-publications-from-a-certain-website-using-python/
 
+# this script will be refactored in near future
+
 from parsel import Selector
 import requests, json, os
 

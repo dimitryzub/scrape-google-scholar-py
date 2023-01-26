@@ -1,5 +1,8 @@
 # blog post: https://serpapi.com/blog/scrape-google-scholar-profiles-from-a-certain-university-in-python/#code_explanation
 
+# this script will be refactored in near future
+
+
 from parsel import Selector
 import requests, re, json, os
 from serpapi import GoogleSearch
