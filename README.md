@@ -204,7 +204,10 @@ Saving organic results to CSV:
 from custom_solution.google_scholar_organic_search import scrape_google_scholar_organic_results
 
 # CSV (JSON also supported) file will be created in the same folder near the runnable script
-scrape_google_scholar_organic_results(query='blizzard', pagination=False, operating_system='win', save_to_csv=True)
+scrape_google_scholar_organic_results(query='blizzard', 
+                                      pagination=False, 
+                                      operating_system='win', 
+                                      save_to_csv=True)
 ```
 
 ## Prerequisites
