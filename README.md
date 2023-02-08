@@ -54,8 +54,8 @@ Install for development:
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
 $ cd scrape-google-scholar-py
-$ python -m venv env && source/bin/activate     # on linux type system
-$ python -m pip install -r requirements-dev.txt && python pip install -r requirements.txt
+$ python -m venv env && source env/bin/activate     # on linux type system (env/Scripts/activate for Win)
+$ python -m pip install -r requirements-dev.txt && python -m pip install -r requirements.txt
 ```
 
 ## 📝Example usage custom backend
