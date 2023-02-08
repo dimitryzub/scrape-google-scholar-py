@@ -7,9 +7,9 @@ This repository is meant to extract data from all Google Scholar pages. You have
 
 ## 🧐Why two backends?
 
-1. If you don't want to pay for API, custom backend is made for you. However, it most likely won't bypass all Google blocks (such as CAPTCHA).
+1. If you don't want to pay for API, custom backend is made for you. However, I'm not 100% sure if `selenium-stealth` could handle all CAPTCHAs (although it handles CAPTCHA by Cloudflare) and similar blocks.
 2. If you know about SerpApi but don't want to figure out pagination.
-3. SerpApi backend is more reliable. Dedicated pool of reliable proxies, CAPTCHA solvers, parser maintenance, and more.
+3. SerpApi backend is more reliable because of dedicated pool of proxies, CAPTCHA solvers, parser maintenance, and more.
 
 
 ## 🧩Custom backend supports
