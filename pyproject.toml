@@ -2,7 +2,7 @@
 line-length = 120
 
 [tool.poetry]
-name = "scrape-google-scholar"
+name = "scrape-google-scholar-py"
 version = "0.2.0"
 homepage = "https://github.com/dimitryzub/scrape-google-scholar"
 description = "Extract data from all Google Scholar pages in Python. Sponsored by SerpApi."
