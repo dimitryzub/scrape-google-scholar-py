@@ -48,10 +48,10 @@ setup(
             'pandas',
         ],
     install_requires=[
-          'google-search-results',
-          'selectolax',
-          'selenium-stealth',
-          'pandas',
+          'google-search-results>=2.4',
+          'selectolax==0.3.12',
+          'selenium-stealth==1.0.6',
+          'pandas>=1.5.3',
     ],
     project_urls={
         'Documentation': 'https://github.com/dimitryzub/scrape-google-scholar#example-usage-custom-backend',
