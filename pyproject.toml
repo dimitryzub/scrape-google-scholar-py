@@ -4,11 +4,23 @@ line-length = 120
 [tool.poetry]
 name = "scrape-google-scholar"
 version = "0.2.0"
+homepage = "https://github.com/dimitryzub/scrape-google-scholar"
 description = "Extract data from all Google Scholar pages in Python."
 authors = ["Dmitiry Zub <dimitryzub@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "scrape_google_scholar"}]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
