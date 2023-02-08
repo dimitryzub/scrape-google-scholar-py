@@ -1,5 +1,0 @@
-google-search-results
-selectolax
-selenium-stealth
-pandas
-ruff

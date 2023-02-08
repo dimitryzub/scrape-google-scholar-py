@@ -8,7 +8,7 @@ setup(
     name='scrape-google-scholar-py',
     description = 'Extract data from all Google Scholar pages in Python. Sponsored by SerpApi.',
     url='https://github.com/dimitryzub/scrape-google-scholar',
-    version='0.2.2',
+    version='0.2.20',
     license='MIT',
     author='Dmitiry Zub',
     author_email='dimitryzub@gmail.com',
@@ -17,7 +17,9 @@ setup(
     long_description_content_type='text/markdown',
     long_description=README,
     include_package_data=True,
+    python_requires='>=3.8',
     classifiers = [
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: MacOS',
@@ -51,11 +53,6 @@ setup(
           'selenium-stealth',
           'pandas',
     ],
-    extras_require={
-        'dev':[
-            'ruff', #TODO: add test dev dependencies
-        ]
-    },
     project_urls={
         'Documentation': 'https://github.com/dimitryzub/scrape-google-scholar#example-usage-custom-backend',
         'Source': 'https://github.com/dimitryzub/scrape-google-scholar',
