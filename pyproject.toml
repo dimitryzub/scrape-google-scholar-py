@@ -1,2 +1,19 @@
 [tool.ruff]
 line-length = 120
+
+[tool.poetry]
+name = "scrape-google-scholar"
+version = "0.2.0"
+description = "Extract data from all Google Scholar pages in Python."
+authors = ["Dmitiry Zub <dimitryzub@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "scrape_google_scholar"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
