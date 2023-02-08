@@ -43,7 +43,13 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 
 ## 📥Installing
 
-Install via `pip` for own usage:
+The most convinient way for now is:
+
+```bash
+$ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
+```
+
+Install via `pip` (currently don't have Python interface):
 
 ```bash
 $ python -m pip install scrape-google-scholar-py
