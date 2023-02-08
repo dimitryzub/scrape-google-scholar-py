@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium_stealth import stealth
 from selenium.webdriver.chrome.service import Service
 from selectolax.lexbor import LexborHTMLParser
-import os, json
-import pandas as pd
 from typing import List, Union, Dict
 
 

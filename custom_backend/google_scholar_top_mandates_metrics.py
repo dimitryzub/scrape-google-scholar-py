@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selectolax.lexbor import LexborHTMLParser
 from typing import List, Dict, Callable
 import pandas as pd
-import json, re
+import re
 
 
 def parse(parser: Callable, top_mandates_data: Callable):

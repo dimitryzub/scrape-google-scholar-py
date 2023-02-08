@@ -1,24 +1,36 @@
+# step-by-step blog post: https://serpapi.com/blog/scrape-google-scholar-publications-from-a-certain-website-using-python/
+
 # this script will be refactored in near future
 
 from parsel import Selector
-import requests, json, os
+import requests, json
 
 
-def check_sources(source: list or str):
-    if isinstance(source, str):
-        return source                                             # NIPS
-    elif isinstance(source, list):
-        return " OR ".join([f'source:{item}' for item in source]) # source:NIPS OR source:Neural Information
+def check_websites(website: list or str):
+    if isinstance(website, str):
+        return website                                           # cabdirect.org
+    elif isinstance(website, list):
+        return " OR ".join([f'site:{site}' for site in website]) # site:cabdirect.org OR site:cab.com
 
 
-def scrape_conference_publications(query: str, source: list or str):
+def scrape_website_publications(query: str, website: list or str):
+    
+    """
+    Add a search query and site or multiple websites.
+
+    Following will work:
+    ["cabdirect.org", "lololo.com", "brabus.org"] -> list[str]
+    ["cabdirect.org"]                             -> list[str]
+    "cabdirect.org"                               -> str
+    """
+    
     # https://docs.python-requests.org/en/master/user/quickstart/#passing-parameters-in-urls
     params = {
-        'q': f'{query.lower()} {check_sources(source=source)}',  # search query
-        'hl': 'en',                         # language of the search
-        'gl': 'us'                          # country of the search
+        'q': f'{query.lower()} {check_websites(website=website)}',  # search query
+        'hl': 'en',                                                 # language of the search
+        'gl': 'us'                                                  # country of the search
     }
-
+    
     # https://docs.python-requests.org/en/master/user/quickstart/#custom-headers
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
@@ -29,6 +41,7 @@ def scrape_conference_publications(query: str, source: list or str):
     
     publications = []
     
+    # iterate over every element from organic results from the first page and extract the data
     for result in selector.css('.gs_r.gs_scl'):
         title = result.css('.gs_rt').xpath('normalize-space()').get()
         link = result.css('.gs_rt a::attr(href)').get()
@@ -38,8 +51,6 @@ def scrape_conference_publications(query: str, source: list or str):
         cite_by_link = f'https://scholar.google.com/scholar{result.css(".gs_or_btn.gs_nph+ a::attr(href)").get()}'
         all_versions_link = f'https://scholar.google.com/scholar{result.css("a~ a+ .gs_nph::attr(href)").get()}'
         related_articles_link = f'https://scholar.google.com/scholar{result.css("a:nth-child(4)::attr(href)").get()}'
-        pdf_file_title = result.css('.gs_or_ggsm a').xpath('normalize-space()').get()
-        pdf_file_link = result.css('.gs_or_ggsm a::attr(href)').get()
     
         publications.append({
             'result_id': result_id,
@@ -50,15 +61,13 @@ def scrape_conference_publications(query: str, source: list or str):
             'cite_by_link': cite_by_link,
             'all_versions_link': all_versions_link,
             'related_articles_link': related_articles_link,
-            'pdf': {
-                'title': pdf_file_title,
-                'link': pdf_file_link
-            }
         })
-        
+    
+    # print or return the results
     # return publications
 
     print(json.dumps(publications, indent=2, ensure_ascii=False))
     
+
 if __name__ == '__main__':
-    scrape_conference_publications(query='anatomy', source=['NIPS', 'Neural Information'])
+    scrape_website_publications(query='biology', website='cabdirect.org')

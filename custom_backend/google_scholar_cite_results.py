@@ -1,7 +1,7 @@
 # this script will be refactored in near future
 
 from parsel import Selector
-import requests, json, os
+import requests
 
 params = {
     'q': 'blizzard', # search query

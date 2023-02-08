@@ -3,7 +3,6 @@ from selenium_stealth import stealth
 from selenium.webdriver.chrome.service import Service
 from selectolax.lexbor import LexborHTMLParser
 from parsel import Selector
-import json
 from typing import List, Dict, Callable
 import time, random, re
 

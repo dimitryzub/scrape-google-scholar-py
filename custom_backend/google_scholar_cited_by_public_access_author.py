@@ -1,6 +1,7 @@
 from parsel import Selector
-import requests, os, json
+import requests, json
 
+#TODO: add to author script
 
 def parsel_scrape_author_cited_by_graph():
     params = {
