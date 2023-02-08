@@ -43,8 +43,18 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 
 ## 📥Installing
 
+Install via `pip` for own usage:
+
 ```bash
-$ git clone https://github.com/dimitryzub/scrape-google-scholar.git
+$ python3 -m pip install scrape-google-scholar-py
+```
+
+Install for development:
+
+```bash
+$ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
+$ cd scrape-google-scholar-py
+$ python3 -m pip install -e .[dev]
 ```
 
 ## 📝Example usage custom backend
