@@ -46,7 +46,7 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 Install via `pip` for own usage:
 
 ```bash
-$ python3 -m pip install scrape-google-scholar-py
+$ python -m pip install scrape-google-scholar-py
 ```
 
 Install for development:
@@ -54,7 +54,8 @@ Install for development:
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
 $ cd scrape-google-scholar-py
-$ python3 -m pip install -e .[dev]
+$ python -m venv env && source/bin/activate     # on linux type system
+$ python -m pip install -r requirements-dev.txt && python pip install -r requirements.txt
 ```
 
 ## 📝Example usage custom backend
