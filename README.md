@@ -47,6 +47,8 @@ The most convinient way for now is:
 
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
+$ cd scrape-google-scholar-py
+# look at example_usage.py
 ```
 
 Install via `pip` (currently don't have Python interface):
@@ -726,6 +728,8 @@ This project depends on:
 - [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs.
 - [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C)
 - [`pandas`](https://pandas.pydata.org/) - to save extracted data to CSV or JSON, or if you want to analyze the data right away. Save options is used in organic results and top publications, public access mandates pages for now.
+- [`google-search-results`](https://github.com/serpapi/google-search-results-python) - Python wrapper for SerpApi backend.
+- [other packages in the `requirements.txt`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/8de484e0eec71478e330303fb405a22e0178f068/requirements.txt).
 
 All scripts are using headless [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) to bypass CAPTCHA that appears on Google Scholar, so you need to have a `chromedriver`. If you're on Linux you may need to do additional troubleshooting if `chromedriver` won't run properly.
 
