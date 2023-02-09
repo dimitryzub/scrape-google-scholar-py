@@ -13,7 +13,7 @@ from serpapi_backend.serpapi_google_scholar_author_results import serpapi_scrape
 
 
 '''
-Custom backend`
+Custom backend
 
 Google Scholar search operators could also be used:
     label:computer_vision "Michigan State University"|"U.Michigan"
