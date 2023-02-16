@@ -5,7 +5,7 @@ from selectolax.lexbor import LexborHTMLParser
 from typing import List, Dict, Callable
 import time, random, re
 import pandas as pd
-
+from pathlib import Path
 
 class CustomGoogleScholarOrganic:
     def __init__(self) -> None:
@@ -118,15 +118,18 @@ class CustomGoogleScholarOrganic:
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
         
+        win_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver.exe'
+        linux_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver'
+        
         # checks for operating system to either run Windows or Linux verson of chromedriver
         # expects to have chromedriver near the runnable file
         if operating_system is None:
             raise Exception('Please provide your OS to `operating_system` argument: "Windows" or "Linux" for script to operate.')
         
         if operating_system.lower() == 'windows' or 'win':
-            driver = webdriver.Chrome(options=options, service=Service(executable_path='chromedriver.exe'))
+            driver = webdriver.Chrome(options=options, service=Service(executable_path=win_chrome_driver_path))
         elif operating_system.lower() == 'linux': 
-            driver = webdriver.Chrome(options=options, service=Service(executable_path='chromedriver'))
+            driver = webdriver.Chrome(options=options, service=Service(executable_path=linux_chrome_driver_path))
         
         stealth(driver,
             languages=['en-US', 'en'],
@@ -171,3 +174,10 @@ class CustomGoogleScholarOrganic:
         driver.quit()
         
         return organic_results_data
+
+
+CustomGoogleScholarOrganic().scrape_google_scholar_organic_results(
+    query='lol',
+    operating_system='win',
+    pagination=False
+)

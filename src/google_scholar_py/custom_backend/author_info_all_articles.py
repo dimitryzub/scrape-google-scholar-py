@@ -3,7 +3,7 @@ from selenium_stealth import stealth
 from selenium.webdriver.chrome.service import Service
 from selectolax.lexbor import LexborHTMLParser
 from typing import List, Union, Dict
-
+from pathlib import Path
 
 class CustomGoogleScholarAuthor:
     def __init__(self) -> None:
@@ -61,15 +61,18 @@ class CustomGoogleScholarAuthor:
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
         
+        win_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver.exe'
+        linux_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver'
+        
         # checks for operating system to either run Windows or Linux verson of chromedriver
         # expects to have chromedriver near the runnable file
         if operating_system is None:
             raise Exception('Please provide your OS to `operating_system` argument: "Windows" or "Linux" for script to operate.')
         
         if operating_system.lower() == 'windows' or 'win':
-            driver = webdriver.Chrome(options=options, service=Service(executable_path='chromedriver.exe'))
+            driver = webdriver.Chrome(options=options, service=Service(executable_path=win_chrome_driver_path))
         elif operating_system.lower() == 'linux': 
-            driver = webdriver.Chrome(options=options, service=Service(executable_path='chromedriver'))
+            driver = webdriver.Chrome(options=options, service=Service(executable_path=linux_chrome_driver_path))
         
         stealth(driver,
             languages=['en-US', 'en'],
