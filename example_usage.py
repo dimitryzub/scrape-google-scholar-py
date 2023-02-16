@@ -17,6 +17,7 @@ data = parser.scrape_google_scholar_author_data(
     operating_system='win',
     parse_articles=True,
     article_pagination=True
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -26,6 +27,7 @@ data = parser.scrape_google_scholar_organic_results(
     operating_system='win',
     pagination=False,
     save_to_csv=True
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -36,6 +38,7 @@ data = parser.scrape_google_scholar_profiles(
     pagination=False,
     save_to_csv=False,
     save_to_json=False
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -52,9 +55,10 @@ print(json.dumps(data, indent=2))
 parser = CustomGoogleScholarTopPublications()
 data = parser.scrape_top_publication_metrics(
     operating_system='win',
-    category='bus',
+    category='bus', # business
     save_to_csv=True,
     save_to_json=False
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -66,6 +70,7 @@ data = author_parser.scrape_google_scholar_author_results(
     api_key='serpapi_api_key',
     parse_articles=False,
     article_pagination=False
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -75,6 +80,7 @@ data = profile_parser.scrape_google_scholar_profile_results(
     query='blizzard',
     api_key='serpapi_api_key',
     pagination=False,
+    # other params
 )
 print(json.dumps(data, indent=2))
 
@@ -84,6 +90,7 @@ data = organic_parser.scrape_google_scholar_organic_results(
     query='minecraft ss ws', 
     api_key='serpapi_api_key', 
     pagination=True
+    # other params
 )
 print(json.dumps(data, indent=2))
 
