@@ -75,7 +75,7 @@ $ python setup.py install
 ## 📝Example usage custom backend
 
 ```python
-from google_scholar_py.custom_backend.organic_search import CustomGoogleScholarOrganic
+from google_scholar_py.custom_backend.profiles_results import CustomGoogleScholarProfiles
 import json
 
 parser = CustomGoogleScholarProfiles()
