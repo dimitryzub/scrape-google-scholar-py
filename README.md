@@ -26,7 +26,7 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 <details>
 <summary>Things custom backend doesn't support yet</summary>
 
-1. Organic results filters (case law, sorting, period ranges). You can add those URL parameters yourself easily to the `google_scholar_organic_search.py` file (line `123`, `136`), where `driver.get()` is being called.
+1. Organic results filters (case law, sorting, period ranges). You can add those URL parameters yourself ([if installing from source](https://github.com/dimitryzub/scrape-google-scholar-py#installing)) easily to the `google_scholar_py/custom_backend/organic_search.py` file (line [`147`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L147) or [`136`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L160)), where `driver.get()` is being called.
 2. Author page -> cited by graph.
 3. Extracting [journal articles page](https://scholar.google.com/citations?hl=uk&vq=en&view_op=list_hcore&venue=9oNLl9DgMnQJ.2022). The [issue to add this page is open](https://github.com/dimitryzub/scrape-google-scholar/issues/2).
 4. [Top publications metrics page](https://scholar.google.com/citations?view_op=top_venues&hl=en). Subcategories are not yet supported, it's in a TODO list. 
