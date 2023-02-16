@@ -1,7 +1,7 @@
 from setuptools import setup
 
 README = ''
-with open('README.md', 'r') as readme_file:
+with open('README.md', 'r', encoding='utf-8') as readme_file:
     README = readme_file.read()
 
 setup(
