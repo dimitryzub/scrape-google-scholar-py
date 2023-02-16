@@ -43,43 +43,48 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 
 ## 📥Installing
 
-The most convinient way for now is:
+Install via `pip`:
+
+```bash
+$ pip install scrape-google-scholar-py
+```
+
+Install for development from source:
 
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
 $ cd scrape-google-scholar-py
-# look at example_usage.py
+$ python setup.py install
 ```
 
-Install via `pip` (currently don't have Python interface):
+If it throws an error with `selenium-stealth`:
+
+```
+error: The 'selenium' distribution was not found and is required by selenium-stealth
+```
+
+Use:
 
 ```bash
-$ python -m pip install scrape-google-scholar-py
+$ pip install selenium-stealth
 ```
 
-Install for development:
-
-```bash
-$ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
-$ cd scrape-google-scholar-py
-$ python -m venv env && source env/bin/activate     # on linux type system (env/Scripts/activate for Win)
-$ python -m pip install -r requirements-dev.txt && python -m pip install -r requirements.txt
-```
 
 ## 📝Example usage custom backend
 
-Say you cloned this repo and use `example_usage.py` file located in the root of the folder
-
 ```python
-from custom_solution.google_scholar_profiles_results import scrape_google_scholar_profiles
+from google_scholar_py.custom_backend.organic_search import CustomGoogleScholarOrganic
 import json
 
-data = scrape_google_scholar_profiles(query='blizzard', pagination=False, operating_system='win')
-
-for profile in data:
-    print(profile['name'])
-    print(profile['interests'])
-
+parser = CustomGoogleScholarProfiles()
+data = parser.scrape_google_scholar_profiles(
+    query='blizzard',
+    operating_system='win', # or 'linux'
+    pagination=False,
+    save_to_csv=False,
+    save_to_json=False
+    # other params
+)
 print(json.dumps(data, indent=2))
 ```
 
@@ -247,30 +252,18 @@ And a JSON:
 </details>
 
 
-Saving organic results to CSV:
-
-```python
-from custom_solution.google_scholar_organic_search import scrape_google_scholar_organic_results
-
-# CSV (JSON also supported) file will be created in the same folder near the runnable script
-scrape_google_scholar_organic_results(query='blizzard', 
-                                      pagination=False, 
-                                      operating_system='win', 
-                                      save_to_csv=True)
-```
-
-
 ## 📝Example usage SerpApi backend
 
 ```python
-from custom_solution.google_scholar_profiles_results import scrape_google_scholar_profiles
+from google_scholar_py.serpapi_backend.profile_results import SerpApiGoogleScholarProfiles
 import json
 
-data = serpapi_scrape_google_scholar_organic_results(
-    query='minecraft',
-    api_key='...',     # https://serpapi.com/manage-api-key
+profile_parser = SerpApiGoogleScholarProfiles()
+data = profile_parser.scrape_google_scholar_profile_results(
+    query='blizzard',
+    api_key='',
     pagination=False,
-    lang='en'
+    # other params
 )
 print(json.dumps(data, indent=2))
 ```
@@ -726,7 +719,7 @@ We then use these tasks to systematically compare and contrast existing \u2026",
 
 This project depends on:
 - [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs.
-- [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C)
+- [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C).
 - [`pandas`](https://pandas.pydata.org/) - to save extracted data to CSV or JSON, or if you want to analyze the data right away. Save options is used in organic results and top publications, public access mandates pages for now.
 - [`google-search-results`](https://github.com/serpapi/google-search-results-python) - Python wrapper for SerpApi backend.
 - [other packages in the `requirements.txt`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/8de484e0eec71478e330303fb405a22e0178f068/requirements.txt).
