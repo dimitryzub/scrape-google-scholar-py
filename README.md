@@ -57,18 +57,20 @@ $ cd scrape-google-scholar-py
 $ python setup.py install
 ```
 
-If it throws an error with `selenium-stealth`:
 
-```
-error: The 'selenium' distribution was not found and is required by selenium-stealth
-```
+<details>
+<summary>If it throws an error with `selenium-stealth`</summary>
 
-Use:
+  ```bash
+  error: The 'selenium' distribution was not found and is required by selenium-stealth
+  ```
 
-```bash
-$ pip install selenium-stealth
-```
+  Use this command:
 
+  ```bash
+  $ pip install selenium-stealth
+  ```
+</details>
 
 ## 📝Example usage custom backend
 
