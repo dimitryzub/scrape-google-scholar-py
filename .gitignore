@@ -2,3 +2,4 @@ dist/
 env/
 *.egg-info/
 docs/
+__pycache__/
