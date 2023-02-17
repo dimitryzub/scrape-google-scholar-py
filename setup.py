@@ -8,7 +8,7 @@ setup(
     name='scrape-google-scholar-py',
     description = 'Extract data from all Google Scholar pages in Python. Sponsored by SerpApi.',
     url='https://github.com/dimitryzub/scrape-google-scholar',
-    version='0.2.24',
+    version='0.2.25',
     license='MIT',
     author='Dmitiry Zub',
     author_email='dimitryzub@gmail.com',
