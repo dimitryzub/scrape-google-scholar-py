@@ -5,6 +5,7 @@ from selectolax.lexbor import LexborHTMLParser
 from typing import List, Union, Dict
 from pathlib import Path
 
+
 class CustomGoogleScholarAuthor:
     def __init__(self) -> None:
         pass
@@ -50,7 +51,10 @@ class CustomGoogleScholarAuthor:
             print(article['title'])
             print(article['cited_by_count'])
             ...
-        '''
+        '''  
+        
+        display = Display(visible=0, size=(800, 600))
+        display.start()
         
         # selenium stealth
         options = webdriver.ChromeOptions()
@@ -61,8 +65,8 @@ class CustomGoogleScholarAuthor:
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
         
-        win_chrome_driver_path = Path().cwd() / 'custom_backend' / 'chromedriver.exe'
-        linux_chrome_driver_path = Path().cwd() / 'custom_backend' / 'chromedriver'
+        win_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver.exe'
+        linux_chrome_driver_path = Path(__file__).resolve().parent / 'chromedriver'
         
         # checks for operating system to either run Windows or Linux verson of chromedriver
         # expects to have chromedriver near the runnable file
