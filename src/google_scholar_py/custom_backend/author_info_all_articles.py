@@ -52,10 +52,7 @@ class CustomGoogleScholarAuthor:
             print(article['cited_by_count'])
             ...
         '''  
-        
-        display = Display(visible=0, size=(800, 600))
-        display.start()
-        
+
         # selenium stealth
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
