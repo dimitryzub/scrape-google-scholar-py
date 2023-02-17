@@ -50,6 +50,7 @@ setup(
     install_requires=[
           'google-search-results>=2.4',
           'selectolax==0.3.12',
+          'parsel==1.7.0',
           'selenium-stealth==1.0.6',
           'pandas>=1.5.3',
     ],
