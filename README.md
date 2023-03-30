@@ -286,13 +286,13 @@ And a JSON:
 ## 📝Example usage SerpApi backend
 
 ```python
-from google_scholar_py.serpapi_backend.profile_results import SerpApiGoogleScholarProfiles
+from google_scholar_py import SerpApiGoogleScholarOrganic
 import json
 
 profile_parser = SerpApiGoogleScholarProfiles()
 data = profile_parser.scrape_google_scholar_profile_results(
     query='blizzard',
-    api_key='',
+    api_key='your-serpapi-api-key', # https://serpapi.com/manage-api-key
     pagination=False,
     # other params
 )
