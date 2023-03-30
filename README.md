@@ -1,20 +1,34 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/78694043/170675316-0d7be468-3a85-43b7-9151-260e4f2c1c7e.png" />
-</p>
+<div align="center">
+<p>Sponsor of the project:</p>
+<div>
+   <img src="https://sindresorhus.com/assets/thanks/serpapi-logo-light.svg" width="140" alt="SerpApi">
+</div>
+<a href="https://serpapi.com">
+	<b>API to get search engine results with ease.</b>
+</a>
+</div>
 
+_____
 
-This repository is meant to extract data from all Google Scholar pages. You have two simple backend options: custom and [SerpApi](http://serpapi.com/).
+This repository is meant to extract data from all Google Scholar pages.
 
-## 🧐Why two backends?
+<details>
+<summary>🧐 Why two backends?</summary>
 
-1. If you don't want to pay for API, custom backend is made for you. However, I'm not 100% sure if `selenium-stealth` could handle all CAPTCHAs (although it handles CAPTCHA by Cloudflare) and similar blocks.
+1. If you don't want to pay for API. However, I'm not 100% sure if [`selenium-stealth`](https://pypi.org/project/selenium-stealth/) could handle all CAPTCHAs (although it handles CAPTCHA by Cloudflare) and similar blocks.
 2. If you know about SerpApi but don't want to figure out pagination.
-3. SerpApi backend is more reliable because of dedicated pool of proxies, CAPTCHA solvers, parser maintenance, and more.
+
+SerpApi backend is more reliable because of:
+- dedicated team of maintainers
+- pool of proxies
+- CAPTCHA solvers
+- legal part of scraping and more.
+
+</details>
 
 
-## 🧩Custom backend supports
-
-You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) to parse the data instead. However, it only extracts first 3 points below.  
+<details>
+<summary>🧩 Custom backend supports</summary>
 
 1. [Organic results](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=blizzard&btnG=&oq=blizz) (with pagination).
 2. [Profile results](https://scholar.google.com/citations?view_op=search_authors&mauthors=blizzard&hl=en&oi=drw) (with pagination).
@@ -23,23 +37,40 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 5. [Top publications metrics](https://scholar.google.com/citations?view_op=top_venues&hl=en). Categories is also supported (as function argument). Saves to CSV/JSON. Sub-categories are not yet supported.
 6. soon: [journal articles](https://github.com/dimitryzub/scrape-google-scholar/issues/2).
 
-<details>
-<summary>Things custom backend doesn't support yet</summary>
+You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) to parse the data instead. However, it only extracts first 3 points below.  
 
-1. Organic results filters (case law, sorting, period ranges). You can add those URL parameters yourself ([if installing from source](https://github.com/dimitryzub/scrape-google-scholar-py#installing)) easily to the `google_scholar_py/custom_backend/organic_search.py` file (line [`147`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L147) or [`136`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L160)), where `driver.get()` is being called.
-2. Author page -> cited by graph.
-3. Extracting [journal articles page](https://scholar.google.com/citations?hl=uk&vq=en&view_op=list_hcore&venue=9oNLl9DgMnQJ.2022). The [issue to add this page is open](https://github.com/dimitryzub/scrape-google-scholar/issues/2).
-4. [Top publications metrics page](https://scholar.google.com/citations?view_op=top_venues&hl=en). Subcategories are not yet supported, it's in a TODO list. 
-5. Update [cite results](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=blizzard+effects+xanax&oq=blizzard+effects+x#d=gs_cit&t=1674718593252&u=%2Fscholar%3Fq%3Dinfo%3Alm-jhjzd72UJ%3Ascholar.google.com%2F%26output%3Dcite%26scirp%3D7%26hl%3Den) page extraction.
+  <details>
+  <summary>Things custom backend doesn't support yet</summary>
 
+  1. Organic results filters (case law, sorting, period ranges). You can add those URL parameters yourself ([if installing from source](https://github.com/dimitryzub/scrape-google-scholar-py#installing)) easily to the `google_scholar_py/custom_backend/organic_search.py` file (line [`147`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L147) or [`136`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/a6b3b39042eabdc84851e3c1ca3c246e55bf19d1/google_scholar_py/custom_backend/organic_search.py#L160)), where `driver.get()` is being called.
+  2. Author page -> cited by graph.
+  3. Extracting [journal articles page](https://scholar.google.com/citations?hl=uk&vq=en&view_op=list_hcore&venue=9oNLl9DgMnQJ.2022). The [issue to add this page is open](https://github.com/dimitryzub/scrape-google-scholar/issues/2).
+  4. [Top publications metrics page](https://scholar.google.com/citations?view_op=top_venues&hl=en). Subcategories are not yet supported, it's in a TODO list. 
+  5. Update [cite results](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=blizzard+effects+xanax&oq=blizzard+effects+x#d=gs_cit&t=1674718593252&u=%2Fscholar%3Fq%3Dinfo%3Alm-jhjzd72UJ%3Ascholar.google.com%2F%26output%3Dcite%26scirp%3D7%26hl%3Den) page extraction.
+  </details>
 </details>
 
-## 🔮SerpApi backend supports
+<details>
+<summary>🔮 SerpApi backend supports</summary>
 
 - [Google Scholar Organic](https://serpapi.com/google-scholar-organic-results)
 - [Google Scholar Profiles](https://serpapi.com/google-scholar-profilesapi)
 - [Google Scholar Author](https://serpapi.com/google-scholar-author-api)
 - [Google Scholar Cite](https://serpapi.com/google-scholar-cite-api)
+</details>
+
+
+<details>
+<summary>🏗 Custom backend depends on</summary>
+
+- [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs.
+- [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C).
+- [`pandas`](https://pandas.pydata.org/) - to save extracted data to CSV or JSON, or if you want to analyze the data right away. Save options is used in organic results and top publications, public access mandates pages for now.
+- [`google-search-results`](https://github.com/serpapi/google-search-results-python) - Python wrapper for SerpApi backend.
+- [other packages in the `requirements.txt`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/8de484e0eec71478e330303fb405a22e0178f068/requirements.txt).
+
+All scripts are using headless [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) to bypass CAPTCHA that appears on Google Scholar, so you need to have a `chromedriver`. If you're on Linux you may need to do additional troubleshooting if `chromedriver` won't run properly.
+</details>
 
 ## 📥Installing
 
@@ -54,7 +85,7 @@ Install for development from source:
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
 $ cd scrape-google-scholar-py
-$ python setup.py install
+$ pip install -r requirements.txt
 ```
 
 
@@ -65,7 +96,7 @@ $ python setup.py install
   error: The 'selenium' distribution was not found and is required by selenium-stealth
   ```
 
-  Use this command:
+  Use:
 
   ```bash
   $ pip install selenium-stealth
@@ -75,17 +106,15 @@ $ python setup.py install
 ## 📝Example usage custom backend
 
 ```python
-from google_scholar_py.custom_backend.profiles_results import CustomGoogleScholarProfiles
+from google_scholar_py import CustomGoogleScholarProfiles
 import json
 
 parser = CustomGoogleScholarProfiles()
 data = parser.scrape_google_scholar_profiles(
     query='blizzard',
-    operating_system='win', # or 'linux'
     pagination=False,
     save_to_csv=False,
     save_to_json=False
-    # other params
 )
 print(json.dumps(data, indent=2))
 ```
@@ -717,22 +746,13 @@ We then use these tasks to systematically compare and contrast existing \u2026",
 
 </details>
 
-## 🕹Dependencies
-
-This project depends on:
-- [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs.
-- [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C).
-- [`pandas`](https://pandas.pydata.org/) - to save extracted data to CSV or JSON, or if you want to analyze the data right away. Save options is used in organic results and top publications, public access mandates pages for now.
-- [`google-search-results`](https://github.com/serpapi/google-search-results-python) - Python wrapper for SerpApi backend.
-- [other packages in the `requirements.txt`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/8de484e0eec71478e330303fb405a22e0178f068/requirements.txt).
-
-All scripts are using headless [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) to bypass CAPTCHA that appears on Google Scholar, so you need to have a `chromedriver`. If you're on Linux you may need to do additional troubleshooting if `chromedriver` won't run properly.
-
-If me or another maintainer of the repository didn't update the driver to a newer version and you want to use a newer one, head over to https://chromedriver.chromium.org/ and download a last stable release either for Linux or Windows, and update `chromedriver` in the `custom_solution/` folder.
-
 ## ✍Contributing
 
-Feel free to open an issue suggesting what bug you found, something isn't working, what feature to add, or anything else related to Google Scholar.
+Feel free to open an issue:
+- what bug you found.
+- something isn't working.
+- what feature to add.
+- anything else related to Google Scholar.
 
 If you find comfortable to open a PR, feel free to do so. Guidelines are simple: conventional commits + code as simple as possible without unnecessary complexity.
 
@@ -741,5 +761,3 @@ There's exists a `.gitpod.yaml` config if you're using [Gitpod](https://www.gitp
 ## 📜Licence
 
 `scrape-google-scholar` repository is licensed under MIT license.
-
-<p align="center">Sponsored by <a href="https://serpapi.com/">SerpApi</a> 💛</p>

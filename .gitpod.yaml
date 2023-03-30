@@ -2,18 +2,6 @@ tasks:
   - name: Update Linux and Install other Dependencies
     init: |
       sudo apt-get update -y && sudo apt-get upgrade -y
-  - name: Create Git Aliases
-    command: |
-      git config --global alias.co checkout
-      git config --global alias.br branch
-      git config --global alias.brr branch -m
-      git config --global alias.ci commit
-      git config --global alias.st status
-      git config --global alias.p push
-      git config --global alias.f fetch
-      git config --global alias.pl pull
-      git config --global alias.com checkout main
-      git config --global alias.ls ls-files
   - name: Create VirtualEnv, Install Python Dependencies
     init: |
       python -m venv env

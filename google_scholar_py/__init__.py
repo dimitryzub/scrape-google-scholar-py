@@ -1,0 +1,12 @@
+# custom backend
+from .custom_backend.organic_search import CustomGoogleScholarOrganic
+from .custom_backend.profiles_results import CustomGoogleScholarProfiles
+from .custom_backend.author_info_all_articles import CustomGoogleScholarAuthor
+from .custom_backend.top_mandates_metrics import CustomGoogleScholarTopMandates
+from .custom_backend.top_publications_metrics import CustomGoogleScholarTopPublications
+
+# serpapi backend
+from .serpapi_backend.organic_results import SerpApiGoogleScholarOrganic
+from .serpapi_backend.profile_results import SerpApiGoogleScholarProfiles
+from .serpapi_backend.organic_cite_results import SerpApiGoogleScholarOrganicCite
+from .serpapi_backend.author_results import SerpApiGoogleScholarAuthor

@@ -8,7 +8,7 @@ setup(
     name='scrape-google-scholar-py',
     description = 'Extract data from all Google Scholar pages in Python. Sponsored by SerpApi.',
     url='https://github.com/dimitryzub/scrape-google-scholar',
-    version='0.2.27',
+    version='0.2.3',
     license='MIT',
     author='Dmitiry Zub',
     author_email='dimitryzub@gmail.com',
@@ -17,7 +17,7 @@ setup(
     long_description_content_type='text/markdown',
     long_description=README,
     include_package_data=True,
-    python_requires='>=3.8',
+    python_requires='>=3.10',
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
@@ -27,9 +27,8 @@ setup(
         'Topic :: Internet',
         'Natural Language :: English',
         'Topic :: Utilities',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     keywords=[
             'google scholar',
@@ -48,10 +47,10 @@ setup(
             'pandas',
         ],
     install_requires=[
-          'google-search-results>=2.4',
-          'selectolax==0.3.12',
-          'parsel==1.7.0',
-          'selenium-stealth==1.0.6',
+          'google-search-results>=2.4.2',
+          'selectolax>=0.3.12',
+          'parsel>=1.7.0',
+          'selenium-stealth>=1.0.6',
           'pandas>=1.5.3',
     ],
     project_urls={
