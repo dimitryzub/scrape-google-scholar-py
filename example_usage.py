@@ -3,6 +3,7 @@ from google_scholar_py import CustomGoogleScholarOrganic
 from google_scholar_py import SerpApiGoogleScholarOrganic
 import json
 
+# TODO: add more examples
 custom_parser = CustomGoogleScholarOrganic().scrape_google_scholar_organic_results(
     query='blizzard', 
     pagination=False, 
