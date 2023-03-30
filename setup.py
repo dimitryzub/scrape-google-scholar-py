@@ -52,6 +52,7 @@ setup(
           'parsel>=1.7.0',
           'selenium-stealth>=1.0.6',
           'pandas>=1.5.3',
+          'webdriver-manager>=3.8.5' 
     ],
     project_urls={
         'Documentation': 'https://github.com/dimitryzub/scrape-google-scholar#example-usage-custom-backend',
