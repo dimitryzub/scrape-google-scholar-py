@@ -131,34 +131,7 @@ This query will search all profiles from 2 universities based on "computer visio
 
 
 <details>
-<summary>Output</summary>
-
-Regular print: 
-
-```lang-none
-Adam Lobel
-['Gaming', 'Emotion regulation']
-Daniel Blizzard
-None
-Shuo Chen
-['Machine Learning', 'Data Mining', 'Artificial Intelligence']
-Ian Livingston
-['Human-computer interaction', 'User Experience', 'Player Experience', 'User Research', 'Games']
-Minli Xu
-['Game', 'Machine Learning', 'Data Science', 'Bioinformatics']
-Je Seok Lee
-['HCI', 'Player Experience', 'Games', 'Esports']
-Alisha Ness
-None
-Xingyu (Alfred) Liu
-['Machine Learning in Game Development']
-Amanda LL Cullen
-['Games Studies', 'Fan Studies', 'Live Streaming']
-Nicole "Nikki" Crenshaw
-['MMOs', 'Neoliberalism', 'Social Affordances', 'Identity', 'Accessibility']
-```
-
-And a JSON:
+<summary>JSON output</summary>
 
 ```json
 [
@@ -300,7 +273,7 @@ print(json.dumps(data, indent=2))
 ```
 
 <details>
-<summary>Output</summary>
+<summary>JSON output</summary>
 
 ```json
 [
