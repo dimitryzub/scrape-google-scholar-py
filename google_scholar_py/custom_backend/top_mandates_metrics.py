@@ -6,7 +6,6 @@ from selectolax.lexbor import LexborHTMLParser
 from typing import List, Dict, Callable
 import pandas as pd
 import re
-from pathlib import Path
 
 
 class CustomGoogleScholarTopMandates:
@@ -119,7 +118,7 @@ class CustomGoogleScholarTopMandates:
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         
-        options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        options.add_experimental_option('excludeSwitches', ['enable-automation', 'enable-logging'])
         options.add_experimental_option('useAutomationExtension', False)
         
         service = Service(ChromeDriverManager().install())

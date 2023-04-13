@@ -73,6 +73,8 @@ class CustomGoogleScholarTopPublicationCitations:
             save_to_json: bool = False
         ) -> List[Dict[str, Union[str, List[str], int]]]:
         '''
+        Results comes from (for example): https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0
+        
         Extracts data from Google Scholar Top Publication Metrics Citation page:
         - title: str
         - title_link: str
@@ -83,7 +85,7 @@ class CustomGoogleScholarTopPublicationCitations:
         - published_at: str
     
         Arguments:
-        - link: str. Search query. 
+        - journal_publications_link: str. Search query. 
         - pagination: bool. Enables or disables pagination. Default is False.
         - save_to_csv: bool. True of False. Default is False.
         - save_to_json: bool. True of False. Default is False.
@@ -94,7 +96,7 @@ class CustomGoogleScholarTopPublicationCitations:
 
         parser = CustomGoogleScholarTopPublicationCitations()
         data = parser.scrape_google_scholar_top_publication_citations(
-            link='https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0', # or link variable that stores the link
+            journal_publications_link='https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0', # or link variable that stores the link
             pagination=False,
             save_to_csv=True
         )
@@ -109,7 +111,7 @@ class CustomGoogleScholarTopPublicationCitations:
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         
-        options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        options.add_experimental_option('excludeSwitches', ['enable-automation', 'enable-logging'])
         options.add_experimental_option('useAutomationExtension', False) 
         
         service = Service(ChromeDriverManager().install())
