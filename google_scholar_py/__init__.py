@@ -4,6 +4,7 @@ from .custom_backend.profiles_results import CustomGoogleScholarProfiles
 from .custom_backend.author_info_all_articles import CustomGoogleScholarAuthor
 from .custom_backend.top_mandates_metrics import CustomGoogleScholarTopMandates
 from .custom_backend.top_publications_metrics import CustomGoogleScholarTopPublications
+from .custom_backend.top_publications_article_citations import CustomGoogleScholarTopPublicationCitations
 
 # serpapi backend
 from .serpapi_backend.organic_results import SerpApiGoogleScholarOrganic

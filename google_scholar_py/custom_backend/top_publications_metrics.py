@@ -3,9 +3,8 @@ from selenium_stealth import stealth
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selectolax.lexbor import LexborHTMLParser
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Union
 import pandas as pd
-from pathlib import Path
 
 class CustomGoogleScholarTopPublications:
     def __init__(self) -> None:
@@ -26,8 +25,8 @@ class CustomGoogleScholarTopPublications:
         which appends it to `top_publications_data` List in the google_scholar_top_publication_metrics() function.
         '''
 
-        
-        for table in parser.css('tr'):
+        # selectors skips table header row
+        for table in parser.css('tr:not(:first-child)'):
             try:
                 title: str = table.css_first('td.gsc_mvt_t').text()
             except: title = None
@@ -58,7 +57,7 @@ class CustomGoogleScholarTopPublications:
             lang: str = 'en',
             save_to_csv: bool = False, 
             save_to_json: bool = False,
-        ) -> List[Dict[str, str]]:
+        ) -> List[Dict[str, Union[str, int]]]:
         #TODO add subcategories to subcategory arg
         #TODO: support other languages: lang='spanish' -> 'sp'. https://serpapi.com/google-languages
 
@@ -76,7 +75,7 @@ class CustomGoogleScholarTopPublications:
         - save_to_csv: True of False. Default is False. Saves data to CSV file.
         - save_to_json: True of False. Default is False. Saves data to JSON file.
         - lang: str. Language. Defaults to English ('en'). For now, need to be checked yourself. Other languages: https://serpapi.com/google-languages
-        - category: str
+        - category: str. Available categories showed in the function documentation below.
             Available categories:
             - "bus": Business, Economics & Management
             - "chm": Chemical & Material Sciences
@@ -91,7 +90,7 @@ class CustomGoogleScholarTopPublications:
         
         from google_scholar_py import CustomGoogleScholarTopPublications
         
-        data = google_scholar_top_publication_metrics(category='eng', ...) # sv = swedish
+        data = CustomGoogleScholarTopPublications().scrape_top_publication_metrics(category='eng', lang='en') # sv = swedish
         
         for result in data:
             print(result['title'])
