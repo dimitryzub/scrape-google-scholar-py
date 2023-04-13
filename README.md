@@ -1,7 +1,7 @@
 <div align="center">
 <p>Sponsor of the project:</p>
 <div>
-   <img src="https://user-images.githubusercontent.com/78694043/231375638-5bbf2989-fc7b-482a-b6fe-603d1d6d613f.svg" width="140" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/78694043/231375638-5bbf2989-fc7b-482a-b6fe-603d1d6d613f.svg" width="100" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
 	<b>API to get search engine results with ease.</b>
@@ -10,7 +10,15 @@
 
 _____
 
-This repository is meant to extract data from all Google Scholar pages.
+<h3 align="center">
+  Scrape data from all Google Scholar pages from a single Python module.
+</h3>
+
+<div align="center">
+   <img src="https://user-images.githubusercontent.com/78694043/231677340-8980c44d-389a-497d-b021-b1d4ab846a77.svg" width="700" alt="SerpApi">
+</div>
+
+
 
 <details>
 <summary>🧐 Why two backends?</summary>
