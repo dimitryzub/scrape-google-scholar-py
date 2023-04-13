@@ -19,6 +19,13 @@ _____
 </div>
 
 
+<div align="center">
+
+  <a href="https://pepy.tech/project/scrape-google-scholar-py">![Downloads](https://static.pepy.tech/personalized-badge/scrape-google-scholar-py?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
+  <a href="">![licence](https://img.shields.io/github/license/dimitryzub/scrape-google-scholar-py?color=blue)</a>
+
+</div>
+
 
 <details>
 <summary>🧐 Why two backends?</summary>
