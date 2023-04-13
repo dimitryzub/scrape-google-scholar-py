@@ -1,4 +1,3 @@
-# custom backend
 from .custom_backend.organic_search import CustomGoogleScholarOrganic
 from .custom_backend.profiles_results import CustomGoogleScholarProfiles
 from .custom_backend.author_info_all_articles import CustomGoogleScholarAuthor
