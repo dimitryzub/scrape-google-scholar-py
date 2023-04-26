@@ -1,27 +1,27 @@
 <div align="center">
-<p>Sponsor of the project:</p>
+<p>Special thanks to:</p>
 <div>
-   <img src="https://user-images.githubusercontent.com/78694043/231375638-5bbf2989-fc7b-482a-b6fe-603d1d6d613f.svg" width="100" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/78694043/231375638-5bbf2989-fc7b-482a-b6fe-603d1d6d613f.svg" width="60" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
 	<b>API to get search engine results with ease.</b>
 </a>
 </div>
 
-_____
+____
 
 <h3 align="center">
   Scrape data from all Google Scholar pages from a single Python module.
 </h3>
 
 <div align="center">
-   <img src="https://user-images.githubusercontent.com/78694043/231677340-8980c44d-389a-497d-b021-b1d4ab846a77.svg" width="700" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/78694043/231677340-8980c44d-389a-497d-b021-b1d4ab846a77.svg" width="600" alt="scrape-google-scholar-py-logo">
 </div>
 
 
 <div align="center">
 
-  <a href="https://pepy.tech/project/scrape-google-scholar-py">![Downloads](https://static.pepy.tech/personalized-badge/scrape-google-scholar-py?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
+  <a href="https://pepy.tech/project/scrape-google-scholar-py">![Downloads](https://static.pepy.tech/badge/scrape-google-scholar-py/month)</a>
   <a href="">![licence](https://img.shields.io/github/license/dimitryzub/scrape-google-scholar-py?color=blue)</a>
 
 </div>
