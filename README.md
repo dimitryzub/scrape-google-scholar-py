@@ -50,7 +50,7 @@ SerpApi backend is more reliable because of:
 3. [Author + author articles](https://scholar.google.com/citations?user=6IQ8pQwAAAAJ&hl=en&oi=sra) (with pagination), everything except "cited by" graph.
 4. [Public access mandates metrics](https://scholar.google.com/citations?view_op=mandates_leaderboard&hl=en). Yes, you can download CSV with one click, however, it doesn't contain a funder link. Script here has it and saves to CSV/JSON.
 5. [Top publications metrics](https://scholar.google.com/citations?view_op=top_venues&hl=en). Categories is also supported (as function argument). Saves to CSV/JSON. Sub-categories are not yet supported.
-6. soon: [journal articles](https://github.com/dimitryzub/scrape-google-scholar/issues/2).
+6. [Journal articles](https://github.com/dimitryzub/scrape-google-scholar/issues/2) (with pagination).
 
 You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) to parse the data instead. However, it only extracts first 3 points below.  
 
@@ -74,15 +74,12 @@ You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) 
 - [Google Scholar Cite](https://serpapi.com/google-scholar-cite-api)
 </details>
 
-
 <details>
 <summary>🏗 Custom backend depends on</summary>
 
-- [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs.
+- [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) - to bypass CAPTCHAs and render some HTML (like cite results from organic result).
 - [`selectolax`](https://github.com/rushter/selectolax) - to parse HTML fast. Its the fastest Python parser wrapped around [`lexbor`](https://github.com/lexbor/lexbor) (parser in pure C).
 - [`pandas`](https://pandas.pydata.org/) - to save extracted data to CSV or JSON, or if you want to analyze the data right away. Save options is used in organic results and top publications, public access mandates pages for now.
-- [`google-search-results`](https://github.com/serpapi/google-search-results-python) - Python wrapper for SerpApi backend.
-- [other packages in the `requirements.txt`](https://github.com/dimitryzub/scrape-google-scholar-py/blob/8de484e0eec71478e330303fb405a22e0178f068/requirements.txt).
 
 All scripts are using headless [`selenium-stealth`](https://github.com/diprajpatra/selenium-stealth) to bypass CAPTCHA that appears on Google Scholar, so you need to have a `chromedriver`. If you're on Linux you may need to do additional troubleshooting if `chromedriver` won't run properly.
 </details>
@@ -95,7 +92,7 @@ Install via `pip`:
 $ pip install scrape-google-scholar-py
 ```
 
-Install for development from source:
+Install from source:
 
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
@@ -103,6 +100,18 @@ $ cd scrape-google-scholar-py
 $ pip install -r requirements.txt
 ```
 
+### Possible errors that you might encounter
+
+<details>
+<summary>LINUX USERS: If it throws "Web-driver exits unexpectedly" error</summary>
+
+  Try installing extra dependencies to run `chromedriver`:	
+  ```bash
+  $ apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
+  ```
+
+  See resolved issue: [[Linux] Web-driver exits unexpectedly using CustomGoogleScholarOrganic() #7](https://github.com/dimitryzub/scrape-google-scholar-py/issues/7)	
+</details>
 
 <details>
 <summary>If it throws an error with `selenium-stealth`</summary>
