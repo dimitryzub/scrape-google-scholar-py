@@ -52,7 +52,7 @@ SerpApi backend is more reliable because of:
 5. [Top publications metrics](https://scholar.google.com/citations?view_op=top_venues&hl=en). Categories is also supported (as function argument). Saves to CSV/JSON. Sub-categories are not yet supported.
 6. [Journal articles](https://github.com/dimitryzub/scrape-google-scholar/issues/2) (with pagination).
 
-You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) to parse the data instead. However, it only extracts first 3 points below.  
+You can use [`scholary`](https://github.com/scholarly-python-package/scholarly) to parse the data instead. However, it only extracts first 3 points above (organic, profile, author results).  
 
   <details>
   <summary>Things custom backend doesn't support yet</summary>
