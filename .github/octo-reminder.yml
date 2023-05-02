@@ -1,0 +1,35 @@
+# Octo Reminder Configuration
+
+## Command Prefix
+### Define the prefix of your custom command.
+### Type: '/' | '!'
+### Default: '@' (works only in combination with command_name 'set-reminder')
+command_prefix: '@'
+
+## Command Name
+### Define the name of your custom command.
+### Type: String
+### Default: 'set-reminder'
+command_name: 'set-reminder'
+
+## Language
+### Define the language.
+### Type: 'en' | 'fr' | 'de' | 'pt' | 'nl' | 'ja'
+### Default: 'en'
+language: 'en'
+
+## Timezone
+### Define the timezone.
+### Type: String (see also https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json)
+### Default: 'Europe/London'
+timezone: 'Europe/London'
+
+## Default Hour
+### Define the hour that will be used, when no time is specified.
+### Type: Number
+default_hour: 0
+
+## Default Minute
+### Define the minute that will be used, when no time is specified.
+### Type: Number
+default_minute: 0
