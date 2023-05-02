@@ -7,7 +7,7 @@ from typing import List, Dict, Callable, Union
 import pandas as pd
 import time, random
 
-class CustomGoogleScholarTopPublicationCitations:
+class CustomGoogleScholarTopPublicationArticleCitation:
     def __init__(self) -> None:
         pass
     
@@ -15,12 +15,12 @@ class CustomGoogleScholarTopPublicationCitations:
     def parse(self, parser: Callable, publication_citation_data: Callable):
         '''
         Arugments:
-        - parser:  Lexbor parser from scrape_google_scholar_top_publication_citations() function.
-        - publication_citation_data: List to append data to. List origin location is scrape_google_scholar_top_publication_citations() function. Line 104.
+        - parser:  Lexbor parser from scrape_google_scholar_top_publication_article_citations() function.
+        - publication_citation_data: List to append data to. List origin location is scrape_google_scholar_top_publication_article_citations() function. Line 104.
         
         This function parses data from Google Scholar Organic results and appends data to a List.
         
-        It's used by scrape_google_scholar_top_publication_citations().
+        It's used by scrape_google_scholar_top_publication_article_citations().
         '''
         
         # selects the whole table without the first row (header row) 
@@ -42,14 +42,6 @@ class CustomGoogleScholarTopPublicationCitations:
             except: published_at = None
             
             try:
-                cited_by_count: int = int(result.css_first('.gsc_mpat_c .gsc_mp_anchor').text())
-            except: cited_by_count = None
-
-            try:
-                cited_by_link: str = f"https://scholar.google.com{result.css_first('.gsc_mpat_c a.gsc_mp_anchor').attrs['href']}"
-            except: cited_by_link = None
-            
-            try:
                 year: int = int(result.css_first('.gsc_mp_anchor.gs_nph').text())
             except: year = None
             
@@ -58,14 +50,12 @@ class CustomGoogleScholarTopPublicationCitations:
                 'title': title,
                 'title_link': title_link,
                 'authors': authors,
-                'cited_by_link': cited_by_link,
-                'cited_by_count': cited_by_count,
-                'year': year,
+                'year': year,   
                 'published_at': published_at
             })
 
     #TODO: add lang support. https://serpapi.com/google-languages
-    def scrape_google_scholar_top_publication_citations(
+    def scrape_google_scholar_top_publication_article_citations(
             self,
             journal_publications_link: str,
             pagination: bool = False,
@@ -73,16 +63,14 @@ class CustomGoogleScholarTopPublicationCitations:
             save_to_json: bool = False
         ) -> List[Dict[str, Union[str, List[str], int]]]:
         '''
-        Results comes from (for example): https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0
+        Results comes from (for example): https://scholar.google.com/citations?hl=en&venue=k6hd2dUel5kJ.2022&vq=en&view_op=hcore_citedby&hcore_pos=18
         
         Extracts data from Google Scholar Top Publication Metrics Citation page:
         - title: str
         - title_link: str
         - authors: list 
-        - cited_by_count: int
-        - cited_by_link: str 
-        - year: int
         - published_at: str
+        - year: int
     
         Arguments:
         - journal_publications_link: str. Search query. 
@@ -92,14 +80,16 @@ class CustomGoogleScholarTopPublicationCitations:
         
         Usage:
         
-        from google_scholar_py import CustomGoogleScholarTopPublicationCitations
-
-        parser = CustomGoogleScholarTopPublicationCitations()
-        data = parser.scrape_google_scholar_top_publication_citations(
-            journal_publications_link='https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0', # or link variable that stores the link
+        from google_scholar_py import CustomGoogleScholarTopPublicationArticleCitation
+        import json 
+        
+        parser = CustomGoogleScholarTopPublicationArticleCitation()
+        data = parser.scrape_google_scholar_top_publication_article_citations(
+            journal_publications_link='https://scholar.google.com/citations?hl=en&venue=k6hd2dUel5kJ.2022&vq=en&view_op=hcore_citedby&hcore_pos=18', # or link variable that stores the link
             pagination=False,
             save_to_csv=True
         )
+        print(json.dumps(data, indent=2))
         
         for citations in data:
             print(citations['title'], citations['year'], citations['published_at'], sep='\\n')
