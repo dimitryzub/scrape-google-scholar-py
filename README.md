@@ -97,6 +97,7 @@ Install from source:
 ```bash
 $ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
 $ cd scrape-google-scholar-py
+$ python -m venv env && source env/Scripts/activate # windows activation
 $ pip install -r requirements.txt
 ```
 
