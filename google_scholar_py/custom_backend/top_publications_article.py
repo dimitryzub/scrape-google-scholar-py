@@ -7,7 +7,7 @@ from typing import List, Dict, Callable, Union
 import pandas as pd
 import time, random
 
-class CustomGoogleScholarTopPublicationCitations:
+class CustomGoogleScholarTopPublicationArticle:
     def __init__(self) -> None:
         pass
     
@@ -15,12 +15,12 @@ class CustomGoogleScholarTopPublicationCitations:
     def parse(self, parser: Callable, publication_citation_data: Callable):
         '''
         Arugments:
-        - parser:  Lexbor parser from scrape_google_scholar_top_publication_citations() function.
-        - publication_citation_data: List to append data to. List origin location is scrape_google_scholar_top_publication_citations() function. Line 104.
+        - parser:  Lexbor parser from scrape_google_scholar_top_publication_articles() function.
+        - publication_citation_data: List to append data to. List origin location is scrape_google_scholar_top_publication_articles() function. Line 104.
         
         This function parses data from Google Scholar Organic results and appends data to a List.
         
-        It's used by scrape_google_scholar_top_publication_citations().
+        It's used by scrape_google_scholar_top_publication_articles().
         '''
         
         # selects the whole table without the first row (header row) 
@@ -65,7 +65,7 @@ class CustomGoogleScholarTopPublicationCitations:
             })
 
     #TODO: add lang support. https://serpapi.com/google-languages
-    def scrape_google_scholar_top_publication_citations(
+    def scrape_google_scholar_top_publication_articles(
             self,
             journal_publications_link: str,
             pagination: bool = False,
@@ -73,7 +73,7 @@ class CustomGoogleScholarTopPublicationCitations:
             save_to_json: bool = False
         ) -> List[Dict[str, Union[str, List[str], int]]]:
         '''
-        Results comes from (for example): https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0
+        Results comes from (for example): https://scholar.google.com/citations?hl=en&vq=en&view_op=list_hcore&venue=9oNLl9DgMnQJ.2022
         
         Extracts data from Google Scholar Top Publication Metrics Citation page:
         - title: str
@@ -92,11 +92,11 @@ class CustomGoogleScholarTopPublicationCitations:
         
         Usage:
         
-        from google_scholar_py import CustomGoogleScholarTopPublicationCitations
+        from google_scholar_py import CustomGoogleScholarTopPublicationArticle
 
-        parser = CustomGoogleScholarTopPublicationCitations()
-        data = parser.scrape_google_scholar_top_publication_citations(
-            journal_publications_link='https://scholar.google.com/citations?hl=en&venue=H--JoiVp8x8J.2022&vq=en&view_op=hcore_citedby&hcore_pos=0', # or link variable that stores the link
+        parser = CustomGoogleScholarTopPublicationArticle()
+        data = parser.scrape_google_scholar_top_publication_articles(
+            journal_publications_link='https://scholar.google.com/citations?hl=en&vq=en&view_op=list_hcore&venue=9oNLl9DgMnQJ.2022', # or link variable that stores the link
             pagination=False,
             save_to_csv=True
         )
