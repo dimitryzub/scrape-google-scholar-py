@@ -23,7 +23,8 @@ ____
 
   <a href="https://pepy.tech/project/scrape-google-scholar-py">![Downloads](https://static.pepy.tech/badge/scrape-google-scholar-py/month)</a>
   <a href="">![licence](https://img.shields.io/github/license/dimitryzub/scrape-google-scholar-py?color=blue)</a>
-
+  [![codecov](https://codecov.io/github/dimitryzub/scrape-google-scholar-py/branch/main/graph/badge.svg?token=OIQKN0O3B9)](https://codecov.io/github/dimitryzub/scrape-google-scholar-py)
+  
 </div>
 
 
