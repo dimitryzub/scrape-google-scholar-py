@@ -7,12 +7,16 @@ on:
       - '**/README.md'
       - '**/MANIFEST.in'
       - '**/LICENSE'
+      - '**/.gitignore'
+      - '**/.gitpod.yaml'
   pull_request:
     branches: [ main ]
     paths-ignore:
       - '**/README.md'
       - '**/MANIFEST.in'
       - '**/LICENSE'
+      - '**/.gitignore'
+      - '**/.gitpod.yaml'
 
 jobs:
   build:
