@@ -59,7 +59,6 @@ requests==2.28.2
 requests-toolbelt==0.10.1
 rfc3986==2.0.0
 rich==13.3.1
-ruff==0.0.243
 SecretStorage==3.3.3
 selectolax==0.3.12
 selenium==4.8.0

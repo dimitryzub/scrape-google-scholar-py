@@ -92,13 +92,13 @@ Install via `pip`:
 $ pip install scrape-google-scholar-py
 ```
 
-Install from source:
+Install from source (single piped command):
 
 ```bash
-$ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git
-$ cd scrape-google-scholar-py
-$ python -m venv env && source env/Scripts/activate # windows activation
-$ pip install -r requirements.txt
+git clone https://github.com/dimitryzub/scrape-google-scholar-py.git \
+&& cd scrape-google-scholar-py \
+&& python -m venv env && source env/Scripts/activate \
+&& pip install -r requirements.txt
 ```
 
 ### Possible errors that you might encounter
