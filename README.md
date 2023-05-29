@@ -115,6 +115,14 @@ git clone https://github.com/dimitryzub/scrape-google-scholar-py.git \
   See resolved issue: [[Linux] Web-driver exits unexpectedly using CustomGoogleScholarOrganic() #7](https://github.com/dimitryzub/scrape-google-scholar-py/issues/7)	
 </details>
 
+
+<details>
+<summary>For MAC users, possible issues and fixes</summary>
+	
+  - ✅ [(resolved question): Wheels failed to build while pip installing](https://github.com/dimitryzub/scrape-google-scholar-py/issues/12#issuecomment-1554266222)
+</details>	
+	
+	
 <details>
 <summary>If it throws an error with `selenium-stealth`</summary>
 
