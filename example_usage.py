@@ -1,7 +1,7 @@
-# each function have documentation with an example "usage" script
+# each function have documentation with an example "usage" script, after function arugments
 from google_scholar_py import CustomGoogleScholarOrganic
 from google_scholar_py import SerpApiGoogleScholarOrganic
-from google_scholar_py import CustomGoogleScholarTopPublicationCitations
+from google_scholar_py import CustomGoogleScholarTopPublicationArticle
 
 import json
 
@@ -13,7 +13,7 @@ custom_parser_get_organic_results = CustomGoogleScholarOrganic().scrape_google_s
     save_to_json=False
 )
 
-top_publication_citation = CustomGoogleScholarTopPublicationCitations().scrape_google_scholar_top_publication_citations(
+top_publication_citation = CustomGoogleScholarTopPublicationArticle().scrape_google_scholar_top_publication_articles(
     journal_publications_link='https://scholar.google.com/citations?hl=en&vq=en&view_op=list_hcore&venue=TdhLrHqKTh8J.2022',
     pagination=True,
     save_to_csv=False,
