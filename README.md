@@ -27,6 +27,7 @@ ____
   
 </div>
 
+> NOTE: As for now (2025), I no longer maintaining this repo. This could be changed later. To fix common issues, Chrome driver/CSS selectors might need an update.
 
 <details>
 <summary>🧐 Why two backends?</summary>
