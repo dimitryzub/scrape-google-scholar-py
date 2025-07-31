@@ -1,21 +1,9 @@
-<div align="center">
-<p>Special thanks to:</p>
-<div>
-   <img src="https://user-images.githubusercontent.com/78694043/231375638-5bbf2989-fc7b-482a-b6fe-603d1d6d613f.svg" width="60" alt="SerpApi">
-</div>
-<a href="https://serpapi.com">
-	<b>API to get search engine results with ease.</b>
-</a>
-</div>
-
-____
-
 <h3 align="center">
-  Scrape data from all Google Scholar pages from a single Python module.
+  PyScholar 🎓
 </h3>
 
 <div align="center">
-   <img src="https://user-images.githubusercontent.com/78694043/231677340-8980c44d-389a-497d-b021-b1d4ab846a77.svg" width="600" alt="scrape-google-scholar-py-logo">
+   <img src="https://user-images.githubusercontent.com/78694043/231677340-8980c44d-389a-497d-b021-b1d4ab846a77.svg" width="300" alt="scrape-google-scholar-py-logo">
 </div>
 
 
